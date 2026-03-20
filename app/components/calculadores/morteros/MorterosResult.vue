@@ -30,7 +30,12 @@
           <div class="flex justify-between items-center flex-wrap gap-2 bg-brand-gray-mid rounded-lg p-2 lg:py-3 lg:px-5">
             <span class="text-xs lg:text-xl font-medium">Presentación de 25kg</span>
             <span class="lg:text-2xl text-brand-red font-bold uppercase">
-              {{ result.bolsas_min }} a {{ result.bolsas_max }} bolsas
+              <template v-if="result.bolsas_min === result.bolsas_max">
+                {{ result.bolsas_min }} {{ result.bolsas_min === 1 ? 'bolsa' : 'bolsas' }}
+              </template>
+              <template v-else>
+                {{ result.bolsas_min }} a {{ result.bolsas_max }} bolsas
+              </template>
             </span>
           </div>
         </div>

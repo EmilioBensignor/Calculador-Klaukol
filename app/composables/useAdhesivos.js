@@ -83,7 +83,7 @@ export function useAdhesivos() {
     if (inputs.losas_radiantes || inputs.exterior || inputs.sobre_piso_existente) {
       const grande = esPiezaGrande(largo, ancho)
       const producto = grande ? PRODUCTOS.ULTRA_FLEX : PRODUCTOS.FLEX
-      return buildResult(producto, 6, '12×12 mm', true, 'Se recomienda aplicar doble untado', area)
+      return buildResult(producto, 6, '12×12 mm', true, null, area)
     }
 
     switch (inputs.tipo_pieza) {
@@ -92,17 +92,17 @@ export function useAdhesivos() {
         const producto = esMedio
           ? PRODUCTOS.GRANDES_PIEZAS_PORCELLANATO
           : PRODUCTOS.PORCELLANATO_FLUIDO
-        return buildResult(producto, 6, '12×12 mm', true, 'Doble untado recomendado', area)
+        return buildResult(producto, 6, '12×12 mm', true, null, area)
       }
 
       case 'ceramico': {
         if (esPiezaGrande(largo, ancho)) {
-          return buildResult(PRODUCTOS.GRANDES_PIEZAS_IMPERMEABLE, 6, '12×12 mm', true, 'Doble untado recomendado', area)
+          return buildResult(PRODUCTOS.GRANDES_PIEZAS_IMPERMEABLE, 6, '12×12 mm', true, null, area)
         }
         if (maxDim <= 40) {
           return buildResult(PRODUCTOS.IMPERMEABLE_POTENCIADO, 6, '12×12 mm', false, null, area)
         }
-        return buildResult(PRODUCTOS.IMPERMEABLE_POTENCIADO, 6, '12×12 mm', true, 'Doble untado recomendado', area)
+        return buildResult(PRODUCTOS.IMPERMEABLE_POTENCIADO, 6, '12×12 mm', true, null, area)
       }
 
       case 'venecitas': {

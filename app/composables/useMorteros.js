@@ -58,7 +58,7 @@ export function useMorteros() {
     if (config === null) {
       return {
         incompatible: true,
-        mensaje: 'Rapibrick no puede usarse para ladrillo macizo. Consultá con nuestro equipo de soporte técnico.',
+        mensaje: 'No tenemos producto disponible',
       }
     }
 
