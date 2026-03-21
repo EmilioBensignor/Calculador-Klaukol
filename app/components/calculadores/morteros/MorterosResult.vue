@@ -1,7 +1,20 @@
 <template>
   <div class="flex flex-col gap-6 lg:gap-12">
 
-    <div class="border-2 border-brand-red rounded-xl overflow-hidden">
+    <!-- Incompatible -->
+    <div v-if="result.incompatible" class="border-2 border-brand-red rounded-xl overflow-hidden">
+      <div class="p-3 lg:p-6">
+        <p class="text-sm lg:text-base font-semibold uppercase tracking-widest text-brand-red">
+          Producto recomendado
+        </p>
+        <p class="text-2xl lg:text-4xl font-semibold leading-tight mt-1">
+          {{ result.mensaje }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Resultado normal -->
+    <div v-else class="border-2 border-brand-red rounded-xl overflow-hidden">
       <div class="flex flex-col gap-3 lg:gap-6 p-3 lg:p-6">
         <div class="flex flex-col lg:flex-row lg:justify-between gap-2">
           <div class="lg:flex lg:flex-col lg:gap-1">
