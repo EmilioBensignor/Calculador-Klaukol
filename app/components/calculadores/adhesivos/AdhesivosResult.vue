@@ -26,12 +26,12 @@
         </div>
 
         <div class="flex flex-col gap-1">
-          <p class="text-sm lg:text-base text-brand-red font-semibold uppercase">Bolsas necesarias</p>
+          <p class="text-sm lg:text-base text-brand-red font-semibold uppercase">{{ unidadPlural }} necesarios</p>
           <div v-for="bolsa in result.bolsas" :key="bolsa.presentacion"
             class="flex justify-between items-center bg-brand-gray-mid rounded-lg p-2 lg:py-3 lg:px-5">
             <span class="text-xs lg:text-xl font-medium">Presentación de {{ bolsa.presentacion }}</span>
             <span class="lg:text-2xl text-brand-red font-bold uppercase">
-              {{ bolsa.cantidad }} bolsas
+              {{ bolsa.cantidad }} {{ unidadPlural }}
             </span>
           </div>
         </div>
@@ -94,7 +94,9 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue'
+
+const props = defineProps({
   result: {
     type: Object,
     required: true,
@@ -102,4 +104,8 @@ defineProps({
 })
 
 defineEmits(['recalcular'])
+
+const unidadPlural = computed(() =>
+  props.result.producto.unidad === 'balde' ? 'baldes' : 'bolsas'
+)
 </script>

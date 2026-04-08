@@ -2,11 +2,13 @@ export const PRODUCTOS = {
   ECOSTIK: {
     nombre: 'Klaukol Ecostik',
     tipo: 'pasta',
+    unidad: 'balde',
     presentaciones: [{ label: '6 kg', kg: 6 }],
   },
   PLA_K: {
     nombre: 'Klaukol Pla-K',
     tipo: 'pasta',
+    unidad: 'balde',
     presentaciones: [
       { label: '25 kg', kg: 25 },
       { label: '7 kg', kg: 7 },

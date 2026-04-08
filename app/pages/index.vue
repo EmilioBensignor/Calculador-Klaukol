@@ -58,7 +58,7 @@ watch(activeTab, () => {
 
 const HERO_IMAGES = {
   adhesivos: '/images/hero/Adhesivos-S.png',
-  morteros: '/images/hero/Morteros-S.png',
+  morteros: '/images/hero/morteros.webp',
 }
 
 const heroImage = computed(() => HERO_IMAGES[activeTab.value] ?? HERO_IMAGES.adhesivos)
