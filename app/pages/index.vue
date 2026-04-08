@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-white">
 
     <div class="h-80 lg:h-[30rem] overflow-hidden">
-      <img :src="heroImage" class="w-full h-full object-cover transition-opacity duration-300"
+      <img :src="heroImage" class="w-full h-full object-cover object-bottom transition-opacity duration-300"
         alt="Obra en construcción" />
     </div>
 
